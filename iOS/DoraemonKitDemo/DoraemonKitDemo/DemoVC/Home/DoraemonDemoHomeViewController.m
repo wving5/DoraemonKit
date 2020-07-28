@@ -16,26 +16,39 @@
 #import "DoraemonDemoCrashViewController.h"
 #import "DoraemonDemoCommonViewController.h"
 #import <objc/runtime.h>
+#import "UIView+Doraemon.h"
+#import "UIViewController+Doraemon.h"
+#import "DoraemonDemoMemoryLeakViewController.h"
 
 @interface DoraemonDemoHomeViewController ()<UITableViewDelegate,UITableViewDataSource>
+
+@property (strong, nonatomic) UITableView *tableView;
 
 @end
 
 @implementation DoraemonDemoHomeViewController
 
+
+- (UITableView *)tableView {
+    if (!_tableView) {
+        _tableView = [[UITableView alloc] initWithFrame:self.view.bounds];
+        _tableView.delegate = self;
+        _tableView.dataSource = self;
+    }
+    
+    return _tableView;
+}
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"DoraemonKit";
+    self.title = DoraemonDemoLocalizedString(@"DoraemonKit");
     self.navigationItem.leftBarButtonItems = nil;
-    
-    UITableView *tableView = [[UITableView alloc] initWithFrame:self.view.bounds];
-    tableView.delegate = self;
-    tableView.dataSource = self;
-    [self.view addSubview:tableView];
+    [self.view addSubview:self.tableView];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 8;
+    return 9;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -47,21 +60,23 @@
     NSString *txt = nil;
     NSInteger row = indexPath.row;
     if (row==0) {
-        txt = @"沙盒测试Demo";
+        txt = DoraemonDemoLocalizedString(@"沙盒测试Demo");
     }else if(row==1){
-        txt = @"日记测试Demo";
+        txt = DoraemonDemoLocalizedString(@"日志测试Demo");
     }else if(row==2){
-        txt = @"性能测试Demo";
+        txt = DoraemonDemoLocalizedString(@"性能测试Demo");
     }else if(row==3){
-        txt = @"视觉测试Demo";
+        txt = DoraemonDemoLocalizedString(@"视觉测试Demo");
     }else if(row==4){
-        txt = @"网络测试Demo";
+        txt = DoraemonDemoLocalizedString(@"网络测试Demo");
     }else if(row==5){
-        txt = @"模拟位置Demo";
+        txt = DoraemonDemoLocalizedString(@"模拟位置Demo");
     }else if(row==6){
-        txt = @"crash触发Demo";
+        txt = DoraemonDemoLocalizedString(@"crash触发Demo");
     }else if(row==7){
-        txt = @"通用测试Demo";
+        txt = DoraemonDemoLocalizedString(@"通用测试Demo");
+    }else if(row==8){
+        txt = DoraemonDemoLocalizedString(@"内存泄漏测试");
     }
     cell.textLabel.text = txt;
     return cell;
@@ -84,8 +99,10 @@
         vc = [[DoraemonDemoMockGPSViewController alloc] init];
     }else if(row == 6){
         vc = [[DoraemonDemoCrashViewController alloc] init];
-    }else{
+    }else if(row == 7){
         vc = [[DoraemonDemoCommonViewController alloc] init];
+    }else{
+        vc = [[DoraemonDemoMemoryLeakViewController alloc] init];
     }
     [self.navigationController pushViewController:vc animated:YES];
  
@@ -93,6 +110,12 @@
 //    NSArray *dataArray = @[@"1",@"2"];
 //    NSString *num = dataArray[2];
 //    NSLog(@"num == %@",num);
+}
+
+- (void)viewDidLayoutSubviews {
+    [super viewDidLayoutSubviews];
+
+    self.tableView.frame = [self fullscreen];
 }
 
 @end

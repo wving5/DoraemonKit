@@ -10,6 +10,12 @@
 #import "UIColor+Doraemon.h"
 #import "DoraemonHomeViewController.h"
 
+@interface DoraemonHomeWindow()
+
+- (void)openPlugin:(UIViewController *)vc;
+
+@end
+
 @implementation DoraemonHomeWindow
 
 + (DoraemonHomeWindow *)shareInstance{
@@ -24,9 +30,19 @@
 - (instancetype)initWithFrame:(CGRect)frame{
     self = [super initWithFrame:frame];
     if (self) {
-        self.windowLevel = UIWindowLevelStatusBar + 1.f;
+        self.windowLevel = UIWindowLevelStatusBar - 1.f;
         self.backgroundColor = [UIColor clearColor];
         self.hidden = YES;
+        #if defined(__IPHONE_13_0) && (__IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_13_0)
+            if (@available(iOS 13.0, *)) {
+                for (UIWindowScene* windowScene in [UIApplication sharedApplication].connectedScenes){
+                    if (windowScene.activationState == UISceneActivationStateForegroundActive){
+                        self.windowScene = windowScene;
+                        break;
+                    }
+                }
+            }
+        #endif
     }
     return self;
 }
@@ -44,6 +60,9 @@
 }
 
 - (void)hide{
+    if (self.rootViewController.presentedViewController) {
+        [self.rootViewController.presentedViewController dismissViewControllerAnimated:NO completion:nil];
+    }
     [self setRootVc:nil];
     
     self.hidden = YES;
@@ -65,6 +84,10 @@
         _nav = nil;
     }
 
+}
+
++ (void)openPlugin:(UIViewController *)vc{
+    [[self shareInstance] openPlugin:vc];
 }
 
 @end

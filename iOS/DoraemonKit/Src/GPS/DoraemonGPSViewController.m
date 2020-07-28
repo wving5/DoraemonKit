@@ -32,7 +32,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"Mock GPS";
+    self.title = DoraemonLocalizedString(@"Mock GPS");
     
     [self initUI];
 }
@@ -42,12 +42,12 @@
 }
 
 - (void)initUI{
-    _operateView = [[DoraemonMockGPSOperateView alloc] initWithFrame:CGRectMake(kDoraemonSizeFrom750(6), self.bigTitleView.doraemon_bottom+kDoraemonSizeFrom750(24), self.view.doraemon_width-2*kDoraemonSizeFrom750(6), kDoraemonSizeFrom750(124))];
+    _operateView = [[DoraemonMockGPSOperateView alloc] initWithFrame:CGRectMake(kDoraemonSizeFrom750_Landscape(6), self.bigTitleView.doraemon_bottom+kDoraemonSizeFrom750_Landscape(24), self.view.doraemon_width-2*kDoraemonSizeFrom750_Landscape(6), kDoraemonSizeFrom750_Landscape(124))];
     _operateView.switchView.on = [[DoraemonCacheManager sharedInstance] mockGPSSwitch];
     [self.view addSubview:_operateView];
     [_operateView.switchView addTarget:self action:@selector(switchAction:) forControlEvents:UIControlEventValueChanged];
     
-    _inputView = [[DoraemonMockGPSInputView alloc] initWithFrame:CGRectMake(kDoraemonSizeFrom750(6), _operateView.doraemon_bottom+kDoraemonSizeFrom750(17), self.view.doraemon_width-2*kDoraemonSizeFrom750(6), kDoraemonSizeFrom750(170))];
+    _inputView = [[DoraemonMockGPSInputView alloc] initWithFrame:CGRectMake(kDoraemonSizeFrom750_Landscape(6), _operateView.doraemon_bottom+kDoraemonSizeFrom750_Landscape(17), self.view.doraemon_width-2*kDoraemonSizeFrom750_Landscape(6), kDoraemonSizeFrom750_Landscape(170))];
     _inputView.delegate = self;
     [self.view addSubview:_inputView];
     
@@ -62,18 +62,16 @@
     
     [self.view sendSubviewToBack:self.mapView];
     
-    _mapCenterView = [[DoraemonMockGPSCenterView alloc] initWithFrame:CGRectMake(_mapView.doraemon_width/2-kDoraemonSizeFrom750(250)/2, _mapView.doraemon_height/2-kDoraemonSizeFrom750(250)/2, kDoraemonSizeFrom750(250), kDoraemonSizeFrom750(250))];
+    _mapCenterView = [[DoraemonMockGPSCenterView alloc] initWithFrame:CGRectMake(_mapView.doraemon_width/2-kDoraemonSizeFrom750_Landscape(250)/2, _mapView.doraemon_height/2-kDoraemonSizeFrom750_Landscape(250)/2, kDoraemonSizeFrom750_Landscape(250), kDoraemonSizeFrom750_Landscape(250))];
     [_mapView addSubview:_mapCenterView];
 
     if (_operateView.switchView.on) {
         CLLocationCoordinate2D coordinate = [[DoraemonCacheManager sharedInstance] mockCoordinate];
-        if (coordinate.longitude>0&&coordinate.latitude>0) {
-            [_mapCenterView hiddenGPSInfo:NO];
-            [_mapCenterView renderUIWithGPS:[NSString stringWithFormat:@"%f , %f",coordinate.longitude,coordinate.latitude]];
-            [self.mapView setCenterCoordinate:coordinate animated:NO];
-            CLLocation *loc = [[CLLocation alloc] initWithLatitude:coordinate.latitude longitude:coordinate.longitude];
-            [[DoraemonGPSMocker shareInstance] mockPoint:loc];
-        }
+        [_mapCenterView hiddenGPSInfo:NO];
+        [_mapCenterView renderUIWithGPS:[NSString stringWithFormat:@"%f , %f",coordinate.longitude,coordinate.latitude]];
+        [self.mapView setCenterCoordinate:coordinate animated:NO];
+        CLLocation *loc = [[CLLocation alloc] initWithLatitude:coordinate.latitude longitude:coordinate.longitude];
+        [[DoraemonGPSMocker shareInstance] mockPoint:loc];
     }else{
         [_mapCenterView hiddenGPSInfo:YES];
         [[DoraemonGPSMocker shareInstance] stopMockPoint];
@@ -87,13 +85,11 @@
     [[DoraemonCacheManager sharedInstance] saveMockGPSSwitch:isButtonOn];
     if (isButtonOn) {
         CLLocationCoordinate2D coordinate = [[DoraemonCacheManager sharedInstance] mockCoordinate];
-        if (coordinate.longitude>0 && coordinate.latitude>0) {
-            [_mapCenterView hiddenGPSInfo:NO];
-            [_mapCenterView renderUIWithGPS:[NSString stringWithFormat:@"%f , %f",coordinate.longitude,coordinate.latitude]];
-            [self.mapView setCenterCoordinate:coordinate animated:NO];
-            CLLocation *loc = [[CLLocation alloc] initWithLatitude:coordinate.latitude longitude:coordinate.longitude];
-            [[DoraemonGPSMocker shareInstance] mockPoint:loc];
-        }
+        [_mapCenterView hiddenGPSInfo:NO];
+        [_mapCenterView renderUIWithGPS:[NSString stringWithFormat:@"%f , %f",coordinate.longitude,coordinate.latitude]];
+        [self.mapView setCenterCoordinate:coordinate animated:NO];
+        CLLocation *loc = [[CLLocation alloc] initWithLatitude:coordinate.latitude longitude:coordinate.longitude];
+        [[DoraemonGPSMocker shareInstance] mockPoint:loc];
     }else{
         [_mapCenterView hiddenGPSInfo:YES];
         [[DoraemonGPSMocker shareInstance] stopMockPoint];
@@ -103,7 +99,7 @@
 #pragma mark - DoraemonMockGPSInputViewDelegate
 - (void)inputViewOkClick:(NSString *)gps{
     if (![[DoraemonCacheManager sharedInstance] mockGPSSwitch]) {
-        [DoraemonToastUtil showToast:DoraemonLocalizedString(@"mock开关没有打开")];
+        [DoraemonToastUtil showToast:DoraemonLocalizedString(@"mock开关没有打开") inView:self.view];
         return;
     }
     NSArray *array = [gps componentsSeparatedByString:@" "];
@@ -111,18 +107,18 @@
         NSString *longitudeValue = array[0];
         NSString *latitudeValue = array[1];
         if (longitudeValue.length==0 || latitudeValue.length==0) {
-            [DoraemonToastUtil showToast:DoraemonLocalizedString(@"经纬度不能为空")];
+            [DoraemonToastUtil showToast:DoraemonLocalizedString(@"经纬度不能为空") inView:self.view];
             return;
         }
         
         CGFloat longitude = [longitudeValue floatValue];
         CGFloat latitude = [latitudeValue floatValue];
         if (longitude < -180 || longitude > 180) {
-            [DoraemonToastUtil showToast:DoraemonLocalizedString(@"经度不合法")];
+            [DoraemonToastUtil showToast:DoraemonLocalizedString(@"经度不合法") inView:self.view];
             return;
         }
         if (latitude < -90 || latitude > 90){
-            [DoraemonToastUtil showToast:DoraemonLocalizedString(@"纬度不合法")];
+            [DoraemonToastUtil showToast:DoraemonLocalizedString(@"纬度不合法") inView:self.view];
             return;
         }
         
@@ -137,7 +133,7 @@
         CLLocation *loc = [[CLLocation alloc] initWithLatitude:coordinate.latitude longitude:coordinate.longitude];
         [[DoraemonGPSMocker shareInstance] mockPoint:loc];
     }else{
-        [DoraemonToastUtil showToast:@"格式不正确"];
+        [DoraemonToastUtil showToast:DoraemonLocalizedString(@"格式不正确") inView:self.view];
         return;
     }
     

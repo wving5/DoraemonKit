@@ -6,18 +6,11 @@
 //
 
 #import <Foundation/Foundation.h>
-
-
-typedef void (^DoraemonHandleRestartActionBlock)(void);
-typedef void (^DoraemonHandleRestartCancleActionBlock)(void);
+#import <UIKit/UIKit.h>
 
 @interface DoraemonToastUtil : NSObject
 
-+ (void)showToast:(NSString *)text;
-
 + (void)showToast:(NSString *)text inView:(UIView *)superView;
++ (void)showToastBlack:(NSString *)text inView:(UIView *)superView;
 
-+ (void)handleRestartActionWithVC:(UIViewController *)vc
-                     restartBlock:(DoraemonHandleRestartActionBlock)restartBlock
-                      cancleBlock:(DoraemonHandleRestartCancleActionBlock)cancleBlock;
 @end

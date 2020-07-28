@@ -1,1 +1,0 @@
-include ':app', ':doraemonkit', ':adb', ':compiler-plugin', ':doraemonkit-no-op'

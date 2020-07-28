@@ -20,71 +20,116 @@ PODS:
   - AFNetworking/UIKit (2.6.3):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
-  - BSBacktraceLogger (0.0.1)
-  - CocoaLumberjack (3.5.2):
-    - CocoaLumberjack/Core (= 3.5.2)
-  - CocoaLumberjack/Core (3.5.2)
-  - DoraemonKit/Core (1.1.7):
-    - BSBacktraceLogger
-    - fishhook
-    - PNChart
-    - "UITextView+Placeholder"
-  - DoraemonKit/WithGPS (1.1.7):
-    - BSBacktraceLogger
+  - CocoaLumberjack (3.6.1):
+    - CocoaLumberjack/Core (= 3.6.1)
+  - CocoaLumberjack/Core (3.6.1)
+  - DoraemonKit/Core (3.0.2)
+  - DoraemonKit/WithDatabase (3.0.2):
     - DoraemonKit/Core
-    - fishhook
-    - PNChart
-    - "UITextView+Placeholder"
-  - DoraemonKit/WithLoad (1.1.7):
-    - BSBacktraceLogger
+    - YYDebugDatabase
+  - DoraemonKit/WithGPS (3.0.2):
     - DoraemonKit/Core
-    - fishhook
-    - PNChart
-    - "UITextView+Placeholder"
-  - DoraemonKit/WithLogger (1.1.7):
-    - BSBacktraceLogger
+  - DoraemonKit/WithLoad (3.0.2):
+    - DoraemonKit/Core
+  - DoraemonKit/WithLogger (3.0.2):
     - CocoaLumberjack
     - DoraemonKit/Core
-    - fishhook
-    - PNChart
-    - "UITextView+Placeholder"
-  - fishhook (0.2)
-  - PNChart (0.8.9):
-    - UICountingLabel (~> 1.2.0)
-  - UICountingLabel (1.2.0)
-  - "UITextView+Placeholder (1.2.1)"
+  - DoraemonKit/WithMLeaksFinder (3.0.2):
+    - DoraemonKit/Core
+    - FBRetainCycleDetector
+  - DoraemonKit/WithWeex (3.0.2):
+    - DoraemonKit/Core
+    - WeexSDK
+    - WXDevtool
+  - FBRetainCycleDetector (0.1.4)
+  - FMDB (2.7.5):
+    - FMDB/standard (= 2.7.5)
+  - FMDB/standard (2.7.5)
+  - GCDWebServer (3.5.3):
+    - GCDWebServer/Core (= 3.5.3)
+  - GCDWebServer/Core (3.5.3)
+  - libwebp (1.1.0):
+    - libwebp/demux (= 1.1.0)
+    - libwebp/mux (= 1.1.0)
+    - libwebp/webp (= 1.1.0)
+  - libwebp/demux (1.1.0):
+    - libwebp/webp
+  - libwebp/mux (1.1.0):
+    - libwebp/demux
+  - libwebp/webp (1.1.0)
+  - SDWebImage (5.0.6):
+    - SDWebImage/Core (= 5.0.6)
+  - SDWebImage/Core (5.0.6)
+  - SDWebImageWebPCoder (0.3.1):
+    - libwebp (~> 1.0)
+    - SDWebImage/Core (~> 5.0)
+  - SocketRocket (0.5.1)
+  - WeexSDK (0.26.0)
+  - WXDevtool (0.24.0):
+    - SocketRocket
+    - WeexSDK
+  - YYDebugDatabase (2.0.8):
+    - FMDB
+    - GCDWebServer
 
 DEPENDENCIES:
   - AFNetworking (= 2.6.3)
   - DoraemonKit/Core (from `../../`)
+  - DoraemonKit/WithDatabase (from `../../`)
   - DoraemonKit/WithGPS (from `../../`)
   - DoraemonKit/WithLoad (from `../../`)
   - DoraemonKit/WithLogger (from `../../`)
+  - DoraemonKit/WithMLeaksFinder (from `../../`)
+  - DoraemonKit/WithWeex (from `../../`)
+  - FBRetainCycleDetector (from `https://github.com/facebook/FBRetainCycleDetector.git`)
+  - SDWebImage
+  - SDWebImageWebPCoder
+  - YYDebugDatabase (from `https://github.com/y500/YYDebugDatabase.git`)
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  trunk:
     - AFNetworking
-    - BSBacktraceLogger
     - CocoaLumberjack
-    - fishhook
-    - PNChart
-    - UICountingLabel
-    - "UITextView+Placeholder"
+    - FMDB
+    - GCDWebServer
+    - libwebp
+    - SDWebImage
+    - SDWebImageWebPCoder
+    - SocketRocket
+    - WeexSDK
+    - WXDevtool
 
 EXTERNAL SOURCES:
   DoraemonKit:
     :path: "../../"
+  FBRetainCycleDetector:
+    :git: https://github.com/facebook/FBRetainCycleDetector.git
+  YYDebugDatabase:
+    :git: https://github.com/y500/YYDebugDatabase.git
+
+CHECKOUT OPTIONS:
+  FBRetainCycleDetector:
+    :commit: 1ff2adee84a6ee94a1ae82526104a188774eb90a
+    :git: https://github.com/facebook/FBRetainCycleDetector.git
+  YYDebugDatabase:
+    :commit: b68105eb0784aede05036616c0b94d26b8d97ad0
+    :git: https://github.com/y500/YYDebugDatabase.git
 
 SPEC CHECKSUMS:
   AFNetworking: cb8d14a848e831097108418f5d49217339d4eb60
-  BSBacktraceLogger: 06b983ee93a9f87d957960e9c73d660d5966b447
-  CocoaLumberjack: 118bf4a820efc641f79fa487b75ed928dccfae23
-  DoraemonKit: bf72b036ad3fe273db1a12432f6e4ba06a50be87
-  fishhook: ea19933abfe8f2f52c55fd8b6e2718467d3ebc89
-  PNChart: 84774d225c2126ded6c93d4dbe6ae98c3a73c2d2
-  UICountingLabel: 1db4e7d023e1762171eb226d6dff47a7a84f27aa
-  "UITextView+Placeholder": 0c3efd97f37ea64bde7f34cc6e90fe02e87b3909
+  CocoaLumberjack: b17ae15142558d08bbacf69775fa10c4abbebcc9
+  DoraemonKit: 6dffe62a7f0baf9bf4b0173ac4354257182d47ea
+  FBRetainCycleDetector: 46daef95c2dfa9be34b53087edf6a8f34e4c749c
+  FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
+  GCDWebServer: c0ab22c73e1b84f358d1e2f74bf6afd1c60829f2
+  libwebp: 946cb3063cea9236285f7e9a8505d806d30e07f3
+  SDWebImage: 920f1a2ff1ca8296ad34f6e0510a1ef1d70ac965
+  SDWebImageWebPCoder: ce58a29621c2806dd5c36695ed192cf67163ff9d
+  SocketRocket: d57c7159b83c3c6655745cd15302aa24b6bae531
+  WeexSDK: 55b67d1c411eb28ec1e356f763a335d0ddcc5324
+  WXDevtool: 95b70c73c06fc3299d65bd53ba4b3e0b0087f3cb
+  YYDebugDatabase: 037486297a7dd40bc50e2c6df5de7b4ad24c9c17
 
-PODFILE CHECKSUM: f601867a5c4b742a86a6ca031650062a81a5022b
+PODFILE CHECKSUM: 5f1dcd15ca63a6c44978b50f105166e29d3a9fd4
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.9.1

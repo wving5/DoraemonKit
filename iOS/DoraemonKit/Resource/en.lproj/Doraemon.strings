@@ -1,151 +1,326 @@
-/* 
-  Doraemon.strings
-  Pods
-
-  Created by xgb on 2018/11/13.
-  
-*/
+/*
+ Doraemon.strings
+ Pods
+ 
+ Created by xgb on 2018/11/13.
+ 
+ */
 
 {
-    "H5任意门"   =   "H5 Opener";
-    "测试Owner"   =   "Test Owner";
-    "请您输入测试用户相关信息"   =   "Please enter tester account info";
-    "子线程UI渲染操作"   =   "Thread UI";
-    "沙盒浏览器"   =   "Sandbox";
-    "麦克风权限"   =   "Microphone Privacy";
-    "支持筛选"   =   "Filter";
-    "请求头"   =   "Request Header";
-    "  内存检测"   =   "  Memory monitor";
-    "经纬度不能为空"   =   "Please enter longitude and latitude";
-    "响应头"   =   "Response Header";
-    "子线程UI"   =   "Thread UI";
-    "卡顿"   =   "ANR";
-    "帧率监控"   =   "FPS monitor";
-    "流量监控"   =   "Traffic monitor";
-    "内存: "   =   "Memory: ";
-    "暂未开启流量监控"   =   "Traffic monitor is off";
-    "提醒事项权限"   =   "Notes Privacy";
-    "关闭"   =   "Close";
-    "请选择操作方式"   =   "Choose Operation";
-    "点击跳转"   =   "Click to jump";
-    "请求"   =   "Request";
-    "Memory使用量显示开关"   =   "Memory monitor switch";
-    "该功能需要重启App才能生效"   =   "Reboot to work";
-    "相册权限"   =   "Photos Privacy";
-    "非主线程UI渲染检查"   =   "Thread UI monitor";
-    "流量监控列表"   =   "Traffic monitor list";
-    "流量: "   =   "Traffic: ";
-    "卡顿检测开关"   =   "ANR Switch";
-    "经度不合法"   =   "Invalid longitude";
-    "返回上一级"   =   "Back";
-    "流量曲线开关:  "   =   "Chart switch:  ";
-    "本地预览"   =   "Preview";
-    "请求行"   =   "Request Line";
-    "手机型号"   =   "Mobile model";
-    "检测列表"   =   "Monitor list";
-    "数据大小 : %@B"   =   "Size : %@B";
-    "开始测试"   =   "Start Testing";
-    "颜色拾取器"   =   "Color Picker";
-    "视觉工具"   =   "UI Tool";
-    "用例名称"   =   "Case Name";
-    "业务线"   =   "Business";
-    "开始时间"   =   "Start Time";
-    "  控件名称:%@"   =   "  Widget:%@";
-    "  帧率检测"   =   "  FPS monitor";
-    "流量监控概要"   =   "Traffic monitor info";
-    "数据上传"   =   "Upload";
-    "卡顿详情"   =   "ANR Detail";
-    "View查看器"   =   "View viewer";
-    "卡顿列表"   =   "ANR List";
-    "结束测试"   =   "Stop Testing";
-    "总计已为您抓包"   =   "Total capture";
-    "数据下载"   =   "Download";
-    "查看组件是否对齐"   =   "Check alignment";
-    "点击输入经纬度"   =   "Enter";
-    "手机信息"   =   "Mobile Info";
-    "显示流量监控详情"   =   "Show detail";
-    "卡顿中"   =   "ANR...";
-    "确定"   =   "OK";
-    "网络权限"   =   "Network Privacy";
-    "卡顿检测"   =   "ANR Check";
-    "流量"   =   "Traffic";
-    "经度:"   =   "lng:";
-    "组件检查"   =   "Module Check";
-    "推送权限"   =   "Push Privacy";
-    "通讯录权限"   =   "Contacts Privacy";
-    "\n  控件位置:左:%0.1lf 上:%0.1lf 宽:%0.1lf 高:%0.1lf"   =   "\n  Widget position:Left:%0.1lf Top:%0.1lf Width:%0.1lf Height:%0.1lf";
-    "请在以下输入框输入网址，让走点击跳转按钮即可😘"   =   "Please enter link and click to jump😘";
-    "响应行"   =   "Response Body";
-    "H5通用跳转"   =   "H5 link";
-    "点我右侧😘:  "   =   "Click😘:  ";
-    "常用工具集"   =   "Tool Box";
-    "CPU监控"   =   "CPU monitor";
-    "耗时"   =   "Time-consuming";
-    "\n  背景色:%@  字体颜色:%@   字体大小:%.f"   =   "\n  Background color:%@  Font color:%@   Font size:%.f";
-    "日历权限"   =   "Calendar Privacy";
-    "提示"   =   "Tip";
-    "对齐标尺"   =   "Align Size";
-    "系统版本"   =   "System Version";
-    "FPS显示开关"   =   "FPS Switch";
-    "纬度:"   =   "lat:";
-    "地理位置权限"   =   "Location Privacy";
-    "App的一些基本信息"   =   "App Info";
-    "App基本信息"   =   "App Info";
-    "根目录"   =   "Root path";
-    "子线程渲染UI检查"   =   "Thread UI monitor";
-    "链接"   =   "Link";
-    "沙盒浏览"   =   "Sandbox";
-    "颜色吸管"   =   "Color Picker";
-    "mock开关没有打开"   =   "switch is not open";
-    "帧率: "   =   "FPS: ";
-    "单色色彩空间模式"   =   "Color space";
-    "你好"   =   "Hello";
-    "CPU使用率显示开关"   =   "CPU monitor switch";
-    "查看卡顿记录"   =   "View ANR";
-    "  流量检测"   =   "  Traffic monitor";
+    //分组名称
+    "业务工具"                                      = "Customize";
+    "平台工具"                                      = "Platform";
+    "常用工具"                                      = "Common";
+    "性能检测"                                      = "Performance";
+    "视觉工具"                                      = "UI";
+    "Weex"                                         = "Weex";
+    
+    //每一个模块
+    
+    //数据Mock
+    "Mock数据"                                = "Mock Data";
+    "上传模版"                                 = "Upload Data";
+    "接口分组"                                 = "Group";
+    "开关状态"                                 = "Status";
+    "分组: %@\n"                             = "group : %@\n";
+    "修改人: %@\n"                           = "modified by : %@\n";
+    "创建人: %@\n"                           = "create by : %@\n";
+    "数据预览"                               = "preview";
+    "上传"                                  = "upload";
+    "数据预览为空"                            = "data is empty !";
+    "上传成功"                               = "Upload Successfully";
+    "上传失败"                               = "Upload Failed";
+    "本地是否存在mock数据: %@"                  = "mock data exists locally: %@";
+    "存在"                                  = "exist";
+    "不存在"                                 = "not exist";
+    "App当前处于健康体检状态，无法进行此操作"        = "App is currently in the state of health check, so this operation cannot be carried out";
+    
+    //健康体检
+    "健康体检"                                 = "Health Check";
+    "点击开始检测"                              = "Click to start check";
+    "正在检测中..."                            = "Detecting ...";
+    "向下滑动查看功能使用说明"                    = "swipe down to see how to use the feature";
+    "回到顶部"                                 = "back to the top";
+    "提交成功\n恭喜已完成检测！"                  = "Submitted successfully \n Congratulations!";
+    "第%d步"                                  = "Step %d";
+    "是否确认"                                 = "Are you sure";
+    "结束前请完善下列信息"                        = "Please complete the following";
+    "测试用例名称"                              = "Test case name";
+    "测试人名称"                               = "Test person name";
+    "提交"                                    = "Submit";
+    "取消"                                     = "Cancel";
+    "丢弃"                                     = "Discard";
+    "数据上传成功"                               = "data upload successfully";
+    "数据上传失败"                               = "data upload failed";
+    
+    //应用设置
+    "应用设置"                               = "App Settings";
+    
+    //App信息
+    "App信息"                                =   "App Info";
+    "手机信息"                                =   "Phone Info";
+    "设备名称"                                = "Device Name";
+    "手机型号"                                =   "Phone Model";
+    "系统版本"                                =   "System Version";
+    "手机屏幕"                               = "Phone Screen";
+    "权限信息"                                =   "Privacy Info";
+    "地理位置权限"                          =   "Location";
+    "网络权限"                                =   "Network";
+    "推送权限"                                =   "Push";
+    "相机权限"                                =   "Camera";
+    "麦克风权限"                             =  "Microphone";
+    "相册权限"                                =   "Photos";
+    "通讯录权限"                             =   "Contacts";
+    "日历权限"                                =   "Calendar";
+    "提醒事项权限"                            =   "Notes";
+    "用户没有选择"                          =  "Not Determined";
+    "用户已经授权"                               = "Authorized";
+    "用户没有授权"                               = "Denied";
+    "家长控制"                                     = "Restricted";
+    
+    //沙盒浏览器
+    "沙盒浏览器"                             =  "Sandbox";
+    "本地预览"                                =   "Preview";
+    "分享"                                    = "Share";
+    "请选择操作方式"                       =   "Choose Operation";
+    "返回上一级"                             =   "Back";
+    "根目录"                                   =   "Root Dir";
+    "文件不存在"                             =   "File not exist";
+    "数据库预览"                                  = "DB preview";
+    "文件预览"                                =   "File Preview";
+    
+    //Mock GPS
+    "Mock GPS"                                     =  "Mock GPS";
+    "打开Mock GPS"                                   = "Open Mock GPS";
+    "请输入经纬度"                               = "Please enter latitude and longitude";
+    "经纬度不能为空"                       =  "Please enter longitude and latitude";
+    "格式不正确"                             =  "Invalid format";
+    "(示例: 120.15 30.28)"                           = "(Like: 120.15 30.28)";
+    "经度不合法"                             =   "Invalid longitude";
+    "mock开关没有打开"                      =   "switch is not open";
+    "纬度不合法"                             =   "Invalid latitude";
+    
+    //H5任意门
+    "H5任意门"                                 =  "Browser";
+    "清除搜索历史"                            = "Clear search history";
+    "模拟器不支持扫码功能"                      = "The simulator does not support scanning";
+    "扫描二维码"                             = "QR Scanning";
+    "点击跳转"                                =   "Click to jump";
+    "Doraemon内置浏览器"                          = "Doraemon Built-in browser";
+    "链接不能为空"                        =   "url can not be nil";
+    "设备无相机——设备无相机功能，无法进行扫描" = "Device without camera";
+    "设备相机错误——无法启用相机，请检查"    = "Device camera error";
+    "相机权限未开启，请到「设置-隐私-相机」中允许DoKit访问您的相机"    = "Camera permission is not open";
+    
+    //清除本地数据
+    "清理缓存"                          = "Clear Sanbox";
+    "确定要删除本地数据"                      = "Confirm to clear sanbox data";
+    "正在清理中"                                  = "Deleting";
+    
+    //NSLog
+    "NSLog"                               = "NSLog";
+    "开关"                                      = "On/Off";
+    "查看记录"                                = "View log";
+    "NSLog日志记录"                           = "NSLog Results";
+    "导出"                                  = "export";
+    "清除"                                  = "delete";
+    "%@\n触发时间: %@"                             = "%@\nTrigger time: %@";
+    
+    //UserDefaults
+    
+    //CocoaLumberjack
+    "Lumberjack"                                       = "Lumberjack";
+    "CocoaLumberjack日志记录"                 =  "CocoaLumberjack";
+    "日志记录"                           = "Log Results";
+    "%@\n触发时间: %@\n文件名称: %@\n所在行: %zi\n线程id: %@ \n线程名称: %@" = "%@\nTrigger time: %@\nFile name: %@\nline: %zi\nThread id: %@ \nThread name: %@";
+    
+    //DBView
+    "开启服务"                                   = "Start server";
+    "关闭服务"                                   = "Stop server";
+    "温馨提示"                                   = "tips";
+    "你可以通过下面地址访问"                         = "access server address";
+    "请保证当前手机和PC处在同一个局域网内"             = "ensure phone and pc in the same wifi";
+    "服务已关闭"                                   = "server is off";
+    
+    //FPS
+    "帧率"                                      =   "FPS";
+    "帧率检测"                                     = "FPS monitor";
+    "帧率检测开关"                                 =  "FPS monitor switch";
+    
+    
+    //CPU
+    "CPU"                                         =  "CPU";
+    "CPU检测"                                   =   "CPU monitor";
+    "CPU检测开关"                                  = "CPU monitor switch";
+    
+    //内存
+    "内存"                                      =   "Memory";
+    "内存检测"                                     = "Memory monitor";
+    "内存检测开关"                               = "Memory monitor switch";
+    
+    //网络
+    "网络"                                      =   "Network";
+    "网络监控"                                      =   "Network monitor";
+    "网络检测开关"                               = "Network monitor switch";
+    "显示网络检测详情"                         = "Show network monitor detail";
+    "网络监控摘要"                               = "Network summary";
+    "暂未开启网络监控"                      =   "Network monitor is off";
+    "总计已为您抓包"                       =   "Total capture";
+    "秒"                                = "s";
+    "抓包数量"                                =   "Capture amount ";
+    "数据上传"                                =   "Upload";
+    "数据下载"                                =   "Download";
+    "HTTP方法"                                  =   "HTTP Method";
+    "数据类型"                                =   "Data Type";
+    "网络监控列表"                          =   "Network list";
+    "耗时"                                      =   "cost";
+    "网络监控详情"                          =   "Network monitor info";
+    "请求"                                      =   "Request";
+    "请求概要"                                  = "Summary";
+    "链接"                                     = "Url";
+    "请求头"                                   = "Header";
+    "请求体"                                   = "Body";
+    "响应"                                      =   "Response";
+    "响应概要"                                  =   "Summary";
+    "响应头"                                  =   "Header";
+    "响应体"                                  =   "Body";
+    "数据大小 : %@"                           =   "Size : %@";
+    "你好"                                      =   "Hello";
+    
+    //Crash
+    "Crash"                                 =   "Crash";
+    "Crash日志收集开关"                          = "Crash log switch";
+    "查看Crash日志"                                = "View Crash log";
+    "一键清理Crash日志"                          = "Delete crash log";
+    "确认删除所有崩溃日志吗？"             = "Confirm to delete all crash logs?";
+    "Crash日志列表"                                = "Crash log list";
+    
+    //子线程UI
+    "子线程UI"                                 =   "Sub Thread UI";
+    "子线程UI渲染检测开关"               =   "Sub Thread UI switch";
+    "查看检测记录"                          =   "View monitor records";
+    "检测列表"                                =   "Monitor list";
+    "检测详情"                                =   "Monitor Info";
+    
+     //卡顿
+     "卡顿"                                      =   "ANR";
+     "卡顿检测"                                =   "ANR Check";
+     "卡顿检测开关"                          =   "ANR Switch";
+     "查看卡顿记录"                          =   "View ANR";
+     "一键清理卡顿记录"                          = "Delete ANR track";
+     "卡顿列表"                                =   "ANR List";
+     "卡顿详情"                                =   "ANR Detail";
+     "确认删除所有卡顿记录吗？"             = "Confirm to delete all ANR tracks?";
+     
+     //大图检测
+     "大图检测"                                     = "BigImg";
+     "大图检测开关"                                  = "Big image detection switch";
+     
+     //弱网检测
+     "模拟弱网"                               = "Weak Network";
+     "模拟弱网测试"                            = "Weak Network Test";
+     "弱网模式"                               = "Weak network mode";
+     "断网"                                  = "Broken";
+     "超时"                                  = "Timeout";
+     "限速"                                  = "Limit";
+     "延时"                                  = "Delay";
+     "延时时间"                               = "Delay time";
+     "请求限速"                               = "Request limit";
+     "响应限速"                               = "Response limit";
+     "上行流量"                                 = "Up Stream";
+     "下行流量"                                 = "Down Stream";
+     
+     //开机启动
+     "启动耗时"                               = "Launch Time";
+     "本次启动时间为"                          = "App launch time = ";
+     
+    //UI层级
+    "UI层级"                                  = "UI Hierarchy";
+    "UI层级检查开关"                              = "UI Hierarchy switch";
+
+    //函数耗时
+    "函数耗时"                                   = "Time Profiler";
+    "函数耗时描述" = "\n\n\n This function does not provide a UI operation interface，\n before the code you need to analyze, insert \n\n [DoraemonTimeProfiler startRecord]; \n\nat the end,insert \n\n[DoraemonTimeProfiler stopRecord];\n\n
+    Then manually operate the App to execute the code，You can see the complete function time-consuming analysis in the console。\n\n
+    The sdk filters the code call level> 10 layers, and the function call takes less than 1ms. Of course, you can also set it yourself through the api \n\nAfter analyzing, remember to delete the function call of startRecord and stopRecord.";
+    
+    //Load耗时
+    "Load耗时"                                       = "Load";
+    "Load耗时检测开关"                           = "Load switch";
+    "Load耗时检测记录"                           = "Load Results";
+    "总共耗时"                                     = "Total cost";
+    
+    //内存泄漏
+    "内存泄漏"                                   = "Memory Leak";
+    "内存泄漏检测开关"                            = "Memory Leak Switch";
+    "内存泄漏检测弹框提醒"                            = "Memory Leak Alert Warning";
+    "内存泄漏检测结果"                             = "Memory Leak Result";
+    "内存泄漏详情"                                =  "Memory Leak Detail";
+    
+    //取色器
+    "取色器"                             =   "Color Picker";
+    
+    //组件检查
+    "组件检查"                                =   "View Check";
+    "控件名称"                                 =  "Widget";
+    "\n控件位置：左%0.1lf  上%0.1lf  宽%0.1lf  高%0.1lf" = "\nPosition: left:%0.1lf  top:%0.1lf  width:%0.1lf  height:%0.1lf";
+    "\n背景颜色：%@"                              = "\nBackground Color：%@";
+    "\n背景颜色：%@  字体颜色：%@  字体大小：%.f" = "\nBackground Color：%@  Font Color：%@  Font Size：%.f";
+    
+    //对齐标尺
+    "对齐标尺"                                =   "Align Ruler";
+    "位置：左%@  右%@  上%@  下%@"                 =  "Position: left:%@  right:%@  top:%@  bottom:%@";
+    
+    //元素边框线
+    "布局边框"                                  = "View Border";
+    "布局边框开关"                            = "View border switch";
+    
+    //UI结构
+    "UI结构"                                 = "UI Structure";
+    
+    
+    //Weex Log
+    "日志"                                       = "Log";
+    "Weex日志记录"                               = "Weex Log";
+    
+    //Weex Cache
+    "缓存"                                       = "Cache";
+    "Weex缓存"                               = "Weex Cache";
+    
+    //Weex Info
+    "信息"                                       = "Info";
+    "weex信息查看"                                = "Weex Info";
+    "weexsdk版本号"                              = "weex sdk version";
+    "wxJSLib版本号"                              = "weex jslib version";
+    "wxBundleType"                              = "weex bundle type";
+    "wxBundleSize"                              = "weex bundle size";
+    "请求bundle时间"                              = "query bundle time";
+    "处理bundle时间"                              = "handle bundle time";
+    "第一个view出现时间"                              = "first view appear time";
+    "可交互时间"                              = "interactive time";
+    
+    //设置
+    "设置"                                           = "Settings";
+    "工具管理"                                        = "Kit Manager";
+    "编辑"                                           = "Edit";
+    "完成"                                           = "Done";
+    "是否保存已编辑的内容"                              = "Whether to save the edited content";
+    "保存成功"                                        = "Saved successfully";
+    "还原"                                           = "Reset";
+    "是否还原到初始状态"                                = "Whether to reset to the initial state";
+    "每一个分组至少保留一项"                             = "Keep at least one item in each section";
+    
+    //其他
+    "提示"                                      =   "Tip";
+    "删除成功"                                     = "Delete Success";
+    "确定"                                      =   "OK";
+    "关闭DoraemonKit"                                = "Close DoraemonKit";
+    "当前版本"                                 = "Current Version";
+    "该功能需要重启App才能生效"        =   "Reboot to work";
+    "请输入您要搜索的关键字"           =   "Please enter search keywords";
+    "删除失败"                                     = "Delete fail";
     "Doraemon关闭之后需要重启App才能重新打开"   =   "Reboot to open Doraemon";
-    "性能监控"   =   "Performance Monitor";
-    "Crash查看"   =   "View Crash";
-    "数据大小 : %@"   =   "Size : %@";
-    "隐藏Doraemon"   =   "Hide Doraemon";
-    "子线程UI渲染检测开关"   =   "Thread UI switch";
-    "文件不存在"   =   "File not exist";
-    "Crash本地查看"   =   "Crash Viewer";
-    "日志显示"   =   "Show Log";
-    "请选择你要监控的项目"   =   "Choose project";
-    "内存"   =   "Memory";
-    "空的report"   =   "Empty report";
-    "流量监控开关"   =   "Monitor Switch";
-    "文件预览"   =   "File Preview";
-    "检测详情"   =   "Monitor Info";
-    "删除"   =   "Delete";
-    "流量监控详情"   =   "Traffic monitor info";
-    "\n  背景色:%@"   =   "\n  Background color:%@";
-    "其他"   =   "Other";
-    "内存监控"   =   "Memory monitor";
-    "抓包数量"   =   "Capture amount ";
-    "分享"   =   "Share";
-    "权限信息"   =   "Privacy Info";
-    "数据类型"   =   "Data Type";
-    "流量监控开关:  "   =   "Traffic monitor switch:  ";
-    "h5链接不能为空"   =   "h5 url can not be nil";
-    "查看检测记录"   =   "View monitor records";
-    "取消"   =   "Cancel";
-    "Crash拦截"   =   "Crash intercept";
-    "响应"   =   "Response";
-    "消息体"   =   "Message Body";
-    "帧率"   =   "FPS";
-    "  CPU检测"   =   "  CPU monitor";
-    "是否打开Mock GPS开关（重启生效）⬇️:"   =   "Mock GPS Switch(reboot to work):";
-    "相机权限"   =   "Camera Privacy";
-    "App信息"   =   "App Info";
-    "卡顿操作"   =   "ANR Operation";
-    "HTTP方法"   =   "HTTP Method";
-    "纬度不合法"   =   "Invalid latitude";
-    "请输入您要搜索的关键字"   =   "Please enter search key";
-    "日志显示开关"   =   "Log Switch";
-    "清除本地数据" = "Clear local data";
-    "NSLog" = "NSLog";
-    "查看记录" = "View records";
-    "开关" = "On/Off";
+    "复制"                                           = "Copy";
+    "删除"                                           = "Delete";
+
 }

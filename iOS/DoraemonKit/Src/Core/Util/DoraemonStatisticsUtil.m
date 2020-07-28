@@ -6,6 +6,7 @@
 //
 
 #import "DoraemonStatisticsUtil.h"
+#import "DoraemonDefine.h"
 
 @implementation DoraemonStatisticsUtil
 
@@ -19,16 +20,18 @@
 }
 
 - (void)upLoadUserInfo{
-    if (!_enableUpLoad) {
+    if (_noUpLoad) {
         return;
     }
+    
     NSURL *url = [NSURL URLWithString:@"https://doraemon.xiaojukeji.com/uploadAppData"];
     
-    NSString *appId = [[NSBundle mainBundle] bundleIdentifier];;
-    NSString *appName = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleDisplayName"];
-    NSString *doKitVersion = @"1.1.8";
+    NSString *appId = [DoraemonAppInfoUtil bundleIdentifier];
+    NSString *appName = [DoraemonAppInfoUtil appName];
+    NSString *doKitVersion = DoKitVersion;
     NSString *type = @"iOS";
     NSString *from = @"1";
+    NSString *currentLanguageRegion = [[[NSUserDefaults standardUserDefaults] objectForKey:@"AppleLanguages"] firstObject];
     
     NSMutableDictionary *param = [[NSMutableDictionary alloc] init];
     [param setValue:appId forKey:@"appId"];
@@ -36,6 +39,7 @@
     [param setValue:doKitVersion forKey:@"version"];
     [param setValue:type forKey:@"type"];
     [param setValue:from forKey:@"from"];
+    [param setValue:STRING_NOT_NULL(currentLanguageRegion) forKey:@"language"];//用于区分用户国家
     NSError *error;
     NSData *postData = [NSJSONSerialization dataWithJSONObject:param options:0 error:&error];
     

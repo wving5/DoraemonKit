@@ -1,13 +1,19 @@
 //
 //  DoraemonHomeViewController.h
-//  DoraemonKitDemo
+//  DoraemonKit
 //
-//  Created by yixiang on 2017/12/11.
-//  Copyright © 2017年 yixiang. All rights reserved.
+//  Created by dengyouhua on 2019/9/4.
 //
 
 #import "DoraemonBaseViewController.h"
 
+NS_ASSUME_NONNULL_BEGIN
+
+/**
+ * DoraemonHomeEntry | 新主界面入口
+ */
 @interface DoraemonHomeViewController : DoraemonBaseViewController
 
 @end
+
+NS_ASSUME_NONNULL_END
